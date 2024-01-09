@@ -1,0 +1,23 @@
+<tr *ngIf="product">
+  <td>{{ product.id }}</td>
+  <td>{{ product.name }}</td>
+  <td>{{ product.price }}</td>
+  <td>{{ product.quantity }}</td>
+  <td>{{ product.selected }}</td>
+  <td>{{ product.available }}</td>
+  <td>
+    <button (click)="onSelect(product)" [ngClass]="{'btn-success': product.selected, 'btn-danger': !product.selected}" class="btn btn-sm mr-1">
+      <span>{{ product.selected ? 'Unselect' : 'Select' }}</span>
+    </button>
+  </td>
+  <td>
+      <button class="btn btn-danger mr-3" (click)="onDelete(product)">
+      <span class="fa fa-trash-o"></span>
+    </button>
+  </td>
+  <td>
+    <button class="btn btn-danger" (click)="onEdit(product)">
+      <span class="fa fa-edit"></span>
+    </button>
+  </td>
+</tr>

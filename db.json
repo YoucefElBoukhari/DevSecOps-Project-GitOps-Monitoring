@@ -1,36 +1,28 @@
 {
   "products": [
     {
-      "id": 2,
-      "name": "Phone",
-      "price": 4200,
-      "quantity": 600,
-      "selected": false,
-      "available": false
-    },
-    {
-      "name": "C1",
-      "price": "78",
-      "quantity": "5",
-      "selected": false,
-      "available": true,
-      "id": 3
-    },
-    {
-      "name": "ppp",
-      "price": "56",
-      "quantity": "78",
-      "selected": false,
-      "available": false,
-      "id": 4
-    },
-    {
       "name": "P4",
       "price": "12",
       "quantity": "89",
-      "selected": true,
+      "selected": false,
       "available": false,
       "id": 5
+    },
+    {
+      "name": "Product2",
+      "price": "78",
+      "quantity": "66",
+      "selected": true,
+      "available": true,
+      "id": 6
+    },
+    {
+      "name": "P9",
+      "price": "16",
+      "quantity": "89",
+      "selected": false,
+      "available": false,
+      "id": 7
     }
   ]
 }
