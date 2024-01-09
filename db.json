@@ -1,28 +1,20 @@
 {
   "products": [
     {
-      "name": "P4",
-      "price": "12",
-      "quantity": "89",
-      "selected": false,
-      "available": false,
-      "id": 5
-    },
-    {
-      "name": "Product2",
-      "price": "78",
-      "quantity": "66",
+      "name": "Produit1",
+      "price": "120",
+      "quantity": "40",
       "selected": true,
       "available": true,
-      "id": 6
+      "id": 1
     },
     {
-      "name": "P9",
-      "price": "16",
-      "quantity": "89",
-      "selected": false,
-      "available": false,
-      "id": 7
+      "name": "Produit 2",
+      "price": "200",
+      "quantity": "70",
+      "selected": true,
+      "available": true,
+      "id": 2
     }
   ]
 }
