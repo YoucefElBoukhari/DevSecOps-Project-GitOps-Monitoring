@@ -61,7 +61,7 @@ build-image-Frontend:
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /root/.docker/config.json
     - docker login $CI_REGISTRY
   script:
-    - docker build -t youcef/react-app:react-app-1.0 .
-    - docker push youcef/react-app:react-app-1.0
+    - docker build -t youcef/angular-app:angular-app-1.0 .
+    - docker push youcef/angular-app:angular-app-1.0
 
 
