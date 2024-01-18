@@ -11,19 +11,19 @@ variables:
 default:
   image: node:latest
 
-install_Dependencies:
+.install_Dependencies:
   stage: install
   script:
     - npm install
 
-build-frontend:
+.build-frontend:
   stage: build
   script:
     - echo "Building frontend application"
     - npm install
     - npm run build
 
-sonarcloud-check:
+.sonarcloud-check:
   stage : test
   image:
     name: sonarsource/sonar-scanner-cli:latest
@@ -39,10 +39,10 @@ sonarcloud-check:
     - master
     - develop
 
-include:
+.include:
 - template: Security/Dependency-Scanning.gitlab-ci.yml
 
-gemnasium-dependency_scanning:
+.gemnasium-dependency_scanning:
     stage: test
     tags: [ saas-linux-large-amd64 ]
     rules:
