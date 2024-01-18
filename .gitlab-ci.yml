@@ -2,6 +2,7 @@ stages:
   - install
   - build
   - test
+  - build-image
 
 variables:
   SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
@@ -47,4 +48,20 @@ gemnasium-dependency_scanning:
     rules:
         - if: $CI_COMMIT_BRANCH == "master"
         - if: $CI_MERGE_REQUEST_IID
+
+build-image-Frontend: 
+  stage: build-image
+  image: docker:20.10.11-dind
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  services:
+    - docker:20.10.11-dind
+  before_script:
+    - mkdir -p /root/.docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /root/.docker/config.json
+    - docker login $CI_REGISTRY
+  script:
+    - docker build -t youcef/react-app:react-app-1.0 .
+    - docker push youcef/react-app:react-app-1.0
+
 
