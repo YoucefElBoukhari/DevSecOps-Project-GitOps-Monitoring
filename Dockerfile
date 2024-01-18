@@ -8,13 +8,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install -g npm@10.3.0
 
 # Copy the application files to the container
 COPY . .
 
 # Build the Angular application
-RUN npm run build --prod
+RUN npm run build -- --omit=dev
 
 # Use a smaller, production-ready image
 FROM nginx:alpine
