@@ -1,19 +1,11 @@
+# Use the official Node.js image as a base image
 FROM node:latest as build
-
-# Install NVM
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-
-# Source NVM setup script
-RUN /bin/bash -c "source /root/.nvm/nvm.sh && nvm --version"
-
-# Use Node.js LTS version
-RUN /bin/bash -c "source /root/.nvm/nvm.sh && nvm install --lts"
 
 # Set the working directory
 WORKDIR /app
 
-# Install Angular CLI globally using the installed Node.js version
-RUN /bin/bash -c "source /root/.nvm/nvm.sh && nvm use --lts && npm install -g @angular/cli"
+# Install Angular CLI globally
+RUN npm install -g @angular/cli
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
