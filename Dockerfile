@@ -5,6 +5,7 @@ FROM node:latest as build
 WORKDIR /app
 
 # Install Angular CLI globally
+RUN npm install -g npm@10.3.0
 RUN npm install -g @angular/cli
 
 # Copy package.json and package-lock.json to the container
