@@ -38,7 +38,7 @@ sonarcloud-check:
     - master
     - develop
 
-.include:
+include:
 - template: Security/Dependency-Scanning.gitlab-ci.yml
 
 gemnasium-dependency_scanning:
