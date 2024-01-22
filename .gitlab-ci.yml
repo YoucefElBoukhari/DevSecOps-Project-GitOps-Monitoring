@@ -63,6 +63,8 @@ build-image-Frontend:
     - docker login $CI_REGISTRY
   script:
     - echo "Running container scanning job for the Angular App"
+    - docker build -t elboukhariyoucef/angularapp:1.0.0 . 
+    - docker push elboukhariyoucef/angularapp:1.0.0
 
 container_scanning:
   stage: scan-image-docker
